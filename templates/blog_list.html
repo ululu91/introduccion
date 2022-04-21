@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}blog list
+<br />
+{%for post in posts%}
+<a href="{% url 'blog:detail' post.id %}">{{post.title}} </a>
+<a href="{% url 'blog:update' post.id %}">Update </a>
+<a href="{% url 'blog:delete' post.id %}">Delete </a>
+{%endfor%}
+<br />
+<a
+  class="inline-flex items-center px-2.5 py-y1.5 border border-transparent text-xs font-medium rounded"
+  href="{% url 'blog:create' %}"
+  >Create </a
+><br />
+{% endblock content %}
